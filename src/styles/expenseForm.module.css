@@ -4,7 +4,7 @@
 }
 
 .expense_form_container {
-	width: 40%;
+	width: 100%;
 	padding: 1rem;
 	gap: 1rem;
 	align-items: flex-start;
