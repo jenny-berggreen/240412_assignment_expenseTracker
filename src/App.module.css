@@ -1,0 +1,14 @@
+body {
+	background-color: var(--color-background);
+}
+
+.app_container {
+	width: 100vw;
+}
+
+.navbar {
+	width: 100%;
+	height: 5rem;
+	align-items: flex-start;
+	background-color: var(--color-primary);
+}
