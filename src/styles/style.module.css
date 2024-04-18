@@ -1,3 +1,17 @@
+:root {
+	--color-primary: #7B4BE3;
+	--color-background: #EEEAF6;
+	--color-stroke: #E3E3E3;
+	--color-delete: #FF0202;
+
+	/* categories */
+	--color-housing: #00D63C;
+	--color-groceries: #F946C7;
+	--color-transportation: #0500F9;
+	--color-clothes: #FD8900;
+	--color-other: #00C9F6;
+}
+
 * {
 	padding: 0;
 	margin: 0;
