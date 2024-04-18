@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styles from './styles/style.module.css'
 import appStyles from './App.module.css'
 import ExpenseForm from './components/ExpenseForm.jsx'
+import ExpenseList from './components/ExpenseList.jsx'
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
           {/* DISPLAY EXPENSES */}
           <div className={`${appStyles.expense_list_container} ${styles.flex} ${styles.flex_column}`}>
             <h2>All expenses</h2>
-            <span>list of expenses</span>
+            <ExpenseList />
           </div>
         </div>
 
