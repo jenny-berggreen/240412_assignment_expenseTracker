@@ -24,11 +24,11 @@ body {
 	width: 100%;
 	padding: 2rem;
 	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .category_container {
 	height: 100%;
-	background-color: white;
 }
 
 .form_and_list_container {
