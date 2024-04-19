@@ -17,7 +17,6 @@ body {
 .nav_header {
 	color: white;
 	font-family: 'Inter-Bold';
-	font-size: 20px;
 }
 
 .main_container {
@@ -27,15 +26,23 @@ body {
 	align-items: flex-start;
 }
 
+.gap_header {
+	height: 30px;
+	background-color: grey;
+}
+
 .category_container {
 	height: 100%;
 	width: 20%;
 	align-items: flex-start;
-	gap: 2rem;
+}
+
+.form_and_list_section {
+	width: 70%;
 }
 
 .form_and_list_container {
-	width: 70%;
+	width: 100%;
 	grid-template-columns: 1fr 2fr;
 	background-color: white;
 }

@@ -47,28 +47,32 @@ function App() {
       <div className={`${appStyles.main_container} ${styles.flex} ${styles.flex_row}`}>
         {/* CATEGORIES */}
         <div className={`${appStyles.category_container} ${styles.flex} ${styles.flex_column}`}>
-          <h2>Total category expenses</h2>
+          <h2 className={`${appStyles.gap_header}`}>Total category expenses</h2>
           <CategoryExpenses expenses={expenses} />
         </div>
 
-        <div className={`${appStyles.form_and_list_container} ${styles.grid}`}>
-          {/* TOTAL EXPENSES */}
-          <div className={`${appStyles.total_expenses_container} ${styles.flex}`}>
-            <TotalExpenses expenses={expenses} />
-          </div>
+        <section className={`${appStyles.form_and_list_section} ${styles.flex} ${styles.flex_column}`}>
+          <h2 className={`${appStyles.gap_header}`}></h2>
+          <div className={`${appStyles.form_and_list_container} ${styles.grid}`}>
+            {/* TOTAL EXPENSES */}
+            <div className={`${appStyles.total_expenses_container} ${styles.flex}`}>
+              <TotalExpenses expenses={expenses} />
+            </div>
 
-          {/* EXPENSE FORM */}
-          <div className={`${appStyles.expense_form_container} ${styles.flex} ${styles.flex_column}`}>
-            <h2>Add expense</h2>
-            <ExpenseForm onAddExpense={addExpense} setIsValid={setIsValid} />
-          </div>
+            {/* EXPENSE FORM */}
+            <div className={`${appStyles.expense_form_container} ${styles.flex} ${styles.flex_column}`}>
+              <h2>Add expense</h2>
+              <ExpenseForm onAddExpense={addExpense} setIsValid={setIsValid} />
+            </div>
 
-          {/* DISPLAY EXPENSES */}
-          <div className={`${appStyles.expense_list_container} ${styles.flex} ${styles.flex_column}`}>
-            <h2>All expenses</h2>
-            <ExpenseList expenses={expenses} isValid={isValid} onDeleteExpense={deleteExpense} />
+            {/* DISPLAY EXPENSES */}
+            <div className={`${appStyles.expense_list_container} ${styles.flex} ${styles.flex_column}`}>
+              <h2>All expenses</h2>
+              <ExpenseList expenses={expenses} isValid={isValid} onDeleteExpense={deleteExpense} />
+            </div>
           </div>
-        </div>
+        </section>
+        
 
       </div>
 

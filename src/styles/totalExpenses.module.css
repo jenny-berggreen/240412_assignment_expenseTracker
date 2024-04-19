@@ -8,12 +8,10 @@
 
 .total_expenses_header {
 	margin-top: -20px;
-	font-size: 20px;
 	font-family: 'Inter-SemiBold';
 }
 
 .total_expenses_amount {
-	font-size: 40px;
 	font-family: 'Inter-Bold';
 	color: var(--color-primary);
 }
