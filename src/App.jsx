@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import styles from './styles/style.module.css'
 import appStyles from './App.module.css'
+import fontStyles from './styles/fontSizes.module.css'
 import ExpenseForm from './components/ExpenseForm.jsx'
 import ExpenseList from './components/ExpenseList.jsx'
 import TotalExpenses from './components/TotalExpenses.jsx'
@@ -41,13 +42,13 @@ function App() {
     <div className={`${appStyles.app_container} ${styles.flex} ${styles.flex_column}`}>
       {/* NAVBAR */}
       <nav className={`${appStyles.navbar} ${styles.flex}`}>
-        <span className={`${appStyles.nav_header}`}>Expense Tracker</span>
+        <span className={`${appStyles.nav_header} ${fontStyles.m}`}>Expense Tracker</span>
       </nav>
 
       <div className={`${appStyles.main_container} ${styles.flex} ${styles.flex_row}`}>
         {/* CATEGORIES */}
         <div className={`${appStyles.category_container} ${styles.flex} ${styles.flex_column}`}>
-          <h2 className={`${appStyles.gap_header}`}>Total category expenses</h2>
+          <h2 className={`${appStyles.gap_header} ${fontStyles.l}`}>Total category expenses</h2>
           <CategoryExpenses expenses={expenses} />
         </div>
 
@@ -61,13 +62,13 @@ function App() {
 
             {/* EXPENSE FORM */}
             <div className={`${appStyles.expense_form_container} ${styles.flex} ${styles.flex_column}`}>
-              <h2>Add expense</h2>
+              <h2 className={`${fontStyles.l}`}>Add expense</h2>
               <ExpenseForm onAddExpense={addExpense} setIsValid={setIsValid} />
             </div>
 
             {/* DISPLAY EXPENSES */}
             <div className={`${appStyles.expense_list_container} ${styles.flex} ${styles.flex_column}`}>
-              <h2>All expenses</h2>
+              <h2 className={`${fontStyles.l}`}>All expenses</h2>
               <ExpenseList expenses={expenses} isValid={isValid} onDeleteExpense={deleteExpense} />
             </div>
           </div>

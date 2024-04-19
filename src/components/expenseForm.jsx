@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/style.module.css'
 import formStyles from '../styles/expenseForm.module.css'
+import fontStyles from '../styles/fontSizes.module.css'
 
 const ExpenseForm = ({ onAddExpense, setIsValid }) => {
   // expense data object

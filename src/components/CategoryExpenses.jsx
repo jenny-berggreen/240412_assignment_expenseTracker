@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/style.module.css'
 import categoryStyles from '../styles/categoryExpenses.module.css'
+import fontStyles from '../styles/fontSizes.module.css'
 
 const CategoryExpenses = ({ expenses }) => {
 
@@ -28,7 +29,7 @@ const CategoryExpenses = ({ expenses }) => {
 			otherTotal += amount;
 		}
 	}
-	
+
 	housingTotal = housingTotal.toFixed(2);
 	groceriesTotal = groceriesTotal.toFixed(2);
 	transportationTotal = transportationTotal.toFixed(2);
@@ -38,24 +39,24 @@ const CategoryExpenses = ({ expenses }) => {
   return (
 	<div className={`${categoryStyles.categories_container} ${styles.flex} ${styles.flex_column}`}>
 		<div className={`${categoryStyles.category_card} ${styles.flex} ${styles.flex_column}`}>
-			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__housing}`}>${housingTotal}</span>
-			<span className={`${categoryStyles.category_title}`}>Housing</span>
+			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__housing} ${fontStyles.xl}`}>${housingTotal}</span>
+			<span className={`${categoryStyles.category_title} ${fontStyles.m}`}>Housing</span>
 		</div>
 		<div className={`${categoryStyles.category_card} ${styles.flex} ${styles.flex_column}`}>
-			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__groceries}`}>${groceriesTotal}</span>
-			<span className={`${categoryStyles.category_title}`}>Groceries</span>
+			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__groceries} ${fontStyles.xl}`}>${groceriesTotal}</span>
+			<span className={`${categoryStyles.category_title} ${fontStyles.m}`}>Groceries</span>
 		</div>
 		<div className={`${categoryStyles.category_card} ${styles.flex} ${styles.flex_column}`}>
-			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__transportation}`}>${transportationTotal}</span>
-			<span className={`${categoryStyles.category_title}`}>Transportation</span>
+			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__transportation} ${fontStyles.xl}`}>${transportationTotal}</span>
+			<span className={`${categoryStyles.category_title} ${fontStyles.m}`}>Transportation</span>
 		</div>
 		<div className={`${categoryStyles.category_card} ${styles.flex} ${styles.flex_column}`}>
-			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__clothes}`}>${clothesTotal}</span>
-			<span className={`${categoryStyles.category_title}`}>Clothes</span>
+			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__clothes} ${fontStyles.xl}`}>${clothesTotal}</span>
+			<span className={`${categoryStyles.category_title} ${fontStyles.m}`}>Clothes</span>
 		</div>
 		<div className={`${categoryStyles.category_card} ${styles.flex} ${styles.flex_column}`}>
-			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__other}`}>${otherTotal}</span>
-			<span className={`${categoryStyles.category_title}`}>Other</span>
+			<span className={`${categoryStyles.category_amount} ${categoryStyles.category_amount__other} ${fontStyles.xl}`}>${otherTotal}</span>
+			<span className={`${categoryStyles.category_title} ${fontStyles.m}`}>Other</span>
 		</div>
 	</div>
   )
