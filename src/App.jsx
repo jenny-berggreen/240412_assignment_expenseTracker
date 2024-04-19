@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './styles/style.module.css'
 import appStyles from './App.module.css'
 import ExpenseForm from './components/ExpenseForm.jsx'
@@ -8,7 +8,21 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [isValid, setIsValid] = useState(false);
 
-  // Function to add new expense
+  useEffect(() => {
+    // retrieve expenses from local storage when component mounts
+    const storedExpenses = localStorage.getItem('expenses');
+    if (storedExpenses) {
+      setExpenses(JSON.parse(storedExpenses));
+      setIsValid(true); // set isValid to true if expenses exist
+    }
+  }, []); // run only once on component mount
+
+  useEffect(() => {
+    // store expenses in local storage whenever expenses state changes
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+  }, [expenses]); // run whenever expenses state changes
+
+  // add new expense
   const addExpense = (newExpense) => {
     setExpenses(prevExpenses => [...prevExpenses, newExpense]);
     setIsValid(true); // set isValid to true after adding expense
