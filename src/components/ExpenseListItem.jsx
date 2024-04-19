@@ -2,9 +2,14 @@ import React from 'react'
 import styles from '../styles/style.module.css'
 import listStyles from '../styles/expenseList.module.css'
 
-const ExpenseListItem = ({ expense }) => {
+const ExpenseListItem = ({ expense, onDelete }) => {
 
 	const { title, amount, date, category } = expense;
+
+	const handleDelete = () => {
+		// call onDelete function with the expense to be deleted
+		onDelete(expense);
+	  };
 
   return (
 	<> 
@@ -20,7 +25,7 @@ const ExpenseListItem = ({ expense }) => {
 			<span>${amount}</span>
 		</div>
 		<div className={`${listStyles.button_container} ${styles.flex}`}>
-			<button className={`${listStyles.delete_button}`}>Delete</button>
+			<button className={`${listStyles.delete_button}`} onClick={handleDelete}>Delete</button>
 		</div>
     </li>
 	</>
