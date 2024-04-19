@@ -6,6 +6,24 @@ const ExpenseListItem = ({ expense, onDeleteExpense }) => {
 
 	const { title, amount, date, category } = expense;
 
+	// format date to dd.mm.yyyy
+	const formatDate = (dateString) => {
+		let date = new Date(dateString);
+		let day = date.getDate();
+		let month = date.getMonth();
+		let year = date.getFullYear();
+
+		if(day < 10) {
+			day = '0' + day;
+		}
+
+		if(month < 10) {
+			month = '0' + month;
+		}
+		
+		return `${day}.${month}.${year}`;
+	  };
+
 	const handleDelete = () => {
 		// call onDelete function with the expense to be deleted
 		onDeleteExpense(expense);
@@ -15,7 +33,7 @@ const ExpenseListItem = ({ expense, onDeleteExpense }) => {
 	<> 
 	<li className={`${listStyles.expense_list_row} ${styles.flex} ${styles.flex_row}`}>
 	  	<div className={`${listStyles.title_date_container} ${styles.flex} ${styles.flex_row}`}>
-			<span>{date}</span>
+			<span>{formatDate(expense.date)}</span>
 			<span>{title}</span>
 		</div>
 		<div className={`${listStyles.category_container} ${styles.flex}`}>
