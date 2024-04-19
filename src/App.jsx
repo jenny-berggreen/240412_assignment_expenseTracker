@@ -3,6 +3,7 @@ import styles from './styles/style.module.css'
 import appStyles from './App.module.css'
 import ExpenseForm from './components/ExpenseForm.jsx'
 import ExpenseList from './components/ExpenseList.jsx'
+import TotalExpenses from './components/TotalExpenses.jsx'
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -50,8 +51,8 @@ function App() {
 
         <div className={`${appStyles.form_and_list_container} ${styles.grid}`}>
           {/* TOTAL EXPENSES */}
-          <div className={`${appStyles.total_expenses_container}`}>
-            Total expenses container
+          <div className={`${appStyles.total_expenses_container} ${styles.flex}`}>
+            <TotalExpenses />
           </div>
 
           {/* EXPENSE FORM */}

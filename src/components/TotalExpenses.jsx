@@ -1,8 +1,13 @@
 import React from 'react'
+import styles from '../styles/style.module.css'
+import totalExpensesStyles from '../styles/totalExpenses.module.css'
 
 const TotalExpenses = () => {
   return (
-	<div>TotalExpenses</div>
+	<div className={`${totalExpensesStyles.total_expenses_container} ${styles.flex} ${styles.flex_column}`}>
+		<span>Total Expenses</span>
+		<span>$230.45</span>
+	</div>
   )
 }
 
