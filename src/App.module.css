@@ -29,6 +29,9 @@ body {
 
 .category_container {
 	height: 100%;
+	width: 20%;
+	align-items: flex-start;
+	gap: 2rem;
 }
 
 .form_and_list_container {

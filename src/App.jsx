@@ -4,6 +4,7 @@ import appStyles from './App.module.css'
 import ExpenseForm from './components/ExpenseForm.jsx'
 import ExpenseList from './components/ExpenseList.jsx'
 import TotalExpenses from './components/TotalExpenses.jsx'
+import CategoryExpenses from './components/CategoryExpenses.jsx'
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -47,6 +48,7 @@ function App() {
         {/* CATEGORIES */}
         <div className={`${appStyles.category_container} ${styles.flex} ${styles.flex_column}`}>
           <h2>Total category expenses</h2>
+          <CategoryExpenses />
         </div>
 
         <div className={`${appStyles.form_and_list_container} ${styles.grid}`}>

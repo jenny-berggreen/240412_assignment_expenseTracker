@@ -1,0 +1,42 @@
+.categories_container {
+	width: 100%;
+	gap: 2rem;
+}
+
+.category_card {
+	width: 100%;
+	gap: 1rem;
+	padding: 2rem 0;
+	background-color: white;
+}
+
+.category_amount {
+	font-size: 30px;
+	font-family: 'Inter-Bold';
+}
+
+.category_amount__housing {
+	color: var(--color-housing);
+}
+
+.category_amount__groceries {
+	color: var(--color-groceries);
+}
+
+.category_amount__transportation {
+	color: var(--color-transportation);
+}
+
+.category_amount__clothes {
+	color: var(--color-clothes);
+}
+
+.category_amount__other {
+	color: var(--color-other);
+}
+
+.category_title {
+	font-size: 15px;
+	color: rgb(146, 146, 146);
+}
+
