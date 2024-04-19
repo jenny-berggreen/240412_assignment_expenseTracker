@@ -8,7 +8,7 @@ body {
 
 .navbar {
 	width: 100%;
-	height: 5rem;
+	height: 4rem;
 	justify-content: flex-start;
 	padding: 0 3rem;
 	background-color: var(--color-primary);
@@ -37,11 +37,12 @@ body {
 }
 
 .form_and_list_section {
-	width: 70%;
+	width: 75%;
 }
 
 .form_and_list_container {
 	width: 100%;
+	padding: 2rem;
 	grid-template-columns: 1fr 2fr;
 	background-color: white;
 }
@@ -53,4 +54,5 @@ body {
 .expense_form_container,
 .expense_list_container {
 	align-items: flex-start;
+	gap: 1rem;
 }
