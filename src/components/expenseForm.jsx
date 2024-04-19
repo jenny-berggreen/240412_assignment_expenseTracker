@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/style.module.css'
 import formStyles from '../styles/expenseForm.module.css'
 
 const ExpenseForm = () => {
+  // expense data object
+	const [expenseData, setExpenseData] = useState({
+		title: '',
+		amount: '',
+		date: '',
+		category: ''
+	});
+
+  // errors object
+	const [errors, setErrors] = useState({
+		titleError: '',
+		amountError: '',
+		dateError: ''
+	});
 
   return (
     <>
