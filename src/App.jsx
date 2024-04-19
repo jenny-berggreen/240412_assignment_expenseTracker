@@ -52,7 +52,7 @@ function App() {
         <div className={`${appStyles.form_and_list_container} ${styles.grid}`}>
           {/* TOTAL EXPENSES */}
           <div className={`${appStyles.total_expenses_container} ${styles.flex}`}>
-            <TotalExpenses />
+            <TotalExpenses expenses={expenses} />
           </div>
 
           {/* EXPENSE FORM */}
