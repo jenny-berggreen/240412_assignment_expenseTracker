@@ -53,10 +53,7 @@ const ExpenseForm = () => {
 
 		setErrors((prevErrors) => ({...prevErrors, [`${name}Error`]: ''}))
 
-    setExpenseData((prev) => ({
-      ...prev,
-      [name]: name === 'category' ? (value === '' ? '-' : value) : value,
-    }));
+    setExpenseData((prev) => ({...prev, [name]: name === 'category' ? (value === '' ? '-' : value) : value }));
 	}
 
   // handle submit
