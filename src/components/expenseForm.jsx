@@ -70,12 +70,7 @@ const ExpenseForm = ({ onAddExpense }) => {
     onAddExpense(expenseData);
 
     // clear form after adding expense
-    setExpenseData({
-      title: '',
-      amount: '',
-      date: '',
-      category: ''
-    });
+    
 	}
 
   return (

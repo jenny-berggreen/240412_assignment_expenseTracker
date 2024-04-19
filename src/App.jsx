@@ -5,6 +5,12 @@ import ExpenseForm from './components/ExpenseForm.jsx'
 import ExpenseList from './components/ExpenseList.jsx'
 
 function App() {
+  const [expenses, setExpenses] = useState([]);
+
+  // Function to add new expense
+  const addExpense = (newExpense) => {
+    setExpenses(prevExpenses => [...prevExpenses, newExpense]);
+  };
 
   return (
     <>
@@ -29,7 +35,7 @@ function App() {
           {/* EXPENSE FORM */}
           <div className={`${appStyles.expense_form_container} ${styles.flex} ${styles.flex_column}`}>
             <h2>Add expense</h2>
-            <ExpenseForm />
+            <ExpenseForm onAddExpense={addExpense} />
           </div>
 
           {/* DISPLAY EXPENSES */}
