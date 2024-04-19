@@ -41,7 +41,7 @@ function App() {
           {/* DISPLAY EXPENSES */}
           <div className={`${appStyles.expense_list_container} ${styles.flex} ${styles.flex_column}`}>
             <h2>All expenses</h2>
-            <ExpenseList />
+            <ExpenseList expenses={expenses} />
           </div>
         </div>
 
