@@ -6,13 +6,13 @@ import ExpenseListItem from './ExpenseListItem';
 const ExpenseList = ({ expenses, isValid }) => {
   return (
 	<>
-	<div>
-		<ul className={`${listStyles.expense_list_container}`}>
-			{isValid && expenses.map((expense, index) => (
-				<ExpenseListItem key={index} expense={expense} />
-			))}
-		</ul>
-    </div>
+	
+	<ul className={`${listStyles.expense_list_container}`}>
+		{isValid && expenses.map((expense, index) => (
+			<ExpenseListItem key={index} expense={expense} />
+		))}
+	</ul>
+    
 	</>
   )
 }
