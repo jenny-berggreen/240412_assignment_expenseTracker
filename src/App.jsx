@@ -69,7 +69,7 @@ function App() {
             {/* DISPLAY EXPENSES */}
             <div className={`${appStyles.expense_list_container} ${styles.flex} ${styles.flex_column}`}>
               <h2 className={`${fontStyles.l}`}>All expenses</h2>
-              <ExpenseList expenses={expenses} isValid={isValid} onDeleteExpense={deleteExpense} />
+              <ExpenseList expenses={expenses} onDeleteExpense={deleteExpense} />
             </div>
           </div>
         </section>

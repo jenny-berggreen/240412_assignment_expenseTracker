@@ -3,7 +3,7 @@ import styles from '../styles/style.module.css'
 import listStyles from '../styles/expenseList.module.css'
 import ExpenseListItem from './ExpenseListItem';
 
-const ExpenseList = ({ expenses, isValid, onDeleteExpense }) => {
+const ExpenseList = ({ expenses, onDeleteExpense }) => {
 
 	// sort expenses by date (newest first)
     const sortedExpenses = expenses.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -12,9 +12,11 @@ const ExpenseList = ({ expenses, isValid, onDeleteExpense }) => {
 	<>
 	
 	<ul className={`${listStyles.expense_list_container}`}>
-		{isValid && sortedExpenses.map((expense, index) => (
-			<ExpenseListItem key={index} expense={expense} onDeleteExpense={onDeleteExpense} />
-		))}
+		{sortedExpenses.length > 0 && sortedExpenses.map((expense, index) => (
+          <ExpenseListItem key={index} expense={expense} onDeleteExpense={onDeleteExpense} />
+        ))}
+
+		{sortedExpenses.length === 0 && <p>No expenses to display.</p>}
 	</ul>
     
 	</>
