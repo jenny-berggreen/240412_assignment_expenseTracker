@@ -2,3 +2,17 @@
 	width: 100%;
 	border: solid 1px var(--color-stroke);
 }
+
+.expense_list_row {
+	justify-content: space-between;
+	padding: 0.8rem 2rem;
+	border-bottom: solid 1px var(--color-stroke);
+}
+
+.title_date_container {
+	gap: 2rem;
+}
+
+.delete_button {
+	background-color: var(--color-delete);
+}

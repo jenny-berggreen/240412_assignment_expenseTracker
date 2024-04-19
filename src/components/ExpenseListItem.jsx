@@ -9,10 +9,19 @@ const ExpenseListItem = ({ expense }) => {
   return (
 	<> 
 	<li className={`${listStyles.expense_list_row} ${styles.flex} ${styles.flex_row}`}>
-      <div>Title: {title}</div>
-      <div>Amount: {amount}</div>
-      <div>Date: {date}</div>
-      <div>Category: {category}</div>
+	  	<div className={`${listStyles.title_date_container} ${styles.flex} ${styles.flex_row}`}>
+			<span>{date}</span>
+			<span>{title}</span>
+		</div>
+		<div className={`${listStyles.category_container} ${styles.flex}`}>
+			<span>{category}</span>
+		</div>
+		<div className={`${listStyles.amount_container} ${styles.flex}`}>
+			<span>${amount}</span>
+		</div>
+		<div className={`${listStyles.button_container} ${styles.flex}`}>
+			<button className={`${listStyles.delete_button}`}>Delete</button>
+		</div>
     </li>
 	</>
 	
