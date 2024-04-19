@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../styles/style.module.css'
 import formStyles from '../styles/expenseForm.module.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = ({ onAddExpense }) => {
   // expense data object
 	const [expenseData, setExpenseData] = useState({
 		title: '',
@@ -65,6 +65,17 @@ const ExpenseForm = () => {
     if (validated) {
       console.log(expenseData);
     }
+
+    // add new expense
+    onAddExpense(expenseData);
+
+    // clear form after adding expense
+    setExpenseData({
+      title: '',
+      amount: '',
+      date: '',
+      category: ''
+    });
 	}
 
   return (
