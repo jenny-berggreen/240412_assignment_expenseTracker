@@ -3,13 +3,14 @@ import styles from '../styles/style.module.css'
 import listStyles from '../styles/expenseList.module.css'
 import ExpenseListItem from './ExpenseListItem';
 
-const ExpenseList = ({ expenses, isValid }) => {
+const ExpenseList = ({ expenses, isValid, onDeleteExpense }) => {
+
   return (
 	<>
 	
 	<ul className={`${listStyles.expense_list_container}`}>
 		{isValid && expenses.map((expense, index) => (
-			<ExpenseListItem key={index} expense={expense} />
+			<ExpenseListItem key={index} expense={expense} onDeleteExpense={onDeleteExpense} />
 		))}
 	</ul>
     

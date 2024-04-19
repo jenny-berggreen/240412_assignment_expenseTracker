@@ -2,13 +2,13 @@ import React from 'react'
 import styles from '../styles/style.module.css'
 import listStyles from '../styles/expenseList.module.css'
 
-const ExpenseListItem = ({ expense, onDelete }) => {
+const ExpenseListItem = ({ expense, onDeleteExpense }) => {
 
 	const { title, amount, date, category } = expense;
 
 	const handleDelete = () => {
 		// call onDelete function with the expense to be deleted
-		onDelete(expense);
+		onDeleteExpense(expense);
 	  };
 
   return (

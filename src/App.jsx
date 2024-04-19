@@ -8,8 +8,8 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [isValid, setIsValid] = useState(false);
 
+  // retrieve expenses from local storage
   useEffect(() => {
-    // retrieve expenses from local storage when component mounts
     const storedExpenses = localStorage.getItem('expenses');
     if (storedExpenses) {
       setExpenses(JSON.parse(storedExpenses));
@@ -17,8 +17,8 @@ function App() {
     }
   }, []); // run only once on component mount
 
+  // store expenses in local storage
   useEffect(() => {
-    // store expenses in local storage whenever expenses state changes
     localStorage.setItem('expenses', JSON.stringify(expenses));
   }, [expenses]); // run whenever expenses state changes
 
@@ -26,6 +26,12 @@ function App() {
   const addExpense = (newExpense) => {
     setExpenses(prevExpenses => [...prevExpenses, newExpense]);
     setIsValid(true); // set isValid to true after adding expense
+  };
+
+  // delete expense
+  const deleteExpense = (expenseToDelete) => {
+    const updatedExpenses = expenses.filter(expense => expense !== expenseToDelete);
+    setExpenses(updatedExpenses);
   };
 
   return (
@@ -57,7 +63,7 @@ function App() {
           {/* DISPLAY EXPENSES */}
           <div className={`${appStyles.expense_list_container} ${styles.flex} ${styles.flex_column}`}>
             <h2>All expenses</h2>
-            <ExpenseList expenses={expenses} isValid={isValid} />
+            <ExpenseList expenses={expenses} isValid={isValid} onDeleteExpense={deleteExpense} />
           </div>
         </div>
 
