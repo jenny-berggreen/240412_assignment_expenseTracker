@@ -1,10 +1,25 @@
 import React from 'react'
 import styles from '../styles/style.module.css'
 import listStyles from '../styles/expenseList.module.css'
+import ExpenseListItem from './ExpenseListItem';
 
-const ExpenseList = () => {
+const ExpenseList = ({ expenses }) => {
   return (
-	<div className={`${listStyles.expense_list_container}`}>
+	<>
+	<div>
+		<ul className={`${listStyles.expense_list_container}`}>
+			{expenses.map((expense, index) => (
+				<ExpenseListItem key={index} expense={expense} />
+			))}
+		</ul>
+    </div>
+	</>
+  )
+}
+
+export default ExpenseList
+
+{/* <div className={`${listStyles.expense_list_container}`}>
 		<span className={`${listStyles.expense_list_row} ${styles.flex} ${styles.flex_row}`}>
 			<div className={`${listStyles.title_date_container} ${listStyles.list_row_item__title_date}`}>
 				<span>dd/mm/yy</span>
@@ -20,8 +35,4 @@ const ExpenseList = () => {
 				<button className={`${listStyles.delete_button}`}>Delete</button>
 			</div>
 		</span>
-	</div>
-  )
-}
-
-export default ExpenseList
+	</div> */}
