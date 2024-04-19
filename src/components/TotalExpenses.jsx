@@ -5,8 +5,8 @@ import totalExpensesStyles from '../styles/totalExpenses.module.css'
 const TotalExpenses = () => {
   return (
 	<div className={`${totalExpensesStyles.total_expenses_container} ${styles.flex} ${styles.flex_column}`}>
-		<span>Total Expenses</span>
-		<span>$230.45</span>
+		<span className={`${totalExpensesStyles.total_expenses_header}`}>Total Expenses</span>
+		<span className={`${totalExpensesStyles.total_expenses_amount}`}>$230.45</span>
 	</div>
   )
 }
