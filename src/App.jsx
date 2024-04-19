@@ -48,7 +48,7 @@ function App() {
         {/* CATEGORIES */}
         <div className={`${appStyles.category_container} ${styles.flex} ${styles.flex_column}`}>
           <h2>Total category expenses</h2>
-          <CategoryExpenses />
+          <CategoryExpenses expenses={expenses} />
         </div>
 
         <div className={`${appStyles.form_and_list_container} ${styles.grid}`}>
