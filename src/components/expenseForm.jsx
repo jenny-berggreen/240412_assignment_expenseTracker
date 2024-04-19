@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../styles/style.module.css'
 import formStyles from '../styles/expenseForm.module.css'
 
-const ExpenseForm = ({ onAddExpense }) => {
+const ExpenseForm = ({ onAddExpense, setIsValid }) => {
   // expense data object
 	const [expenseData, setExpenseData] = useState({
 		title: '',
@@ -18,10 +18,10 @@ const ExpenseForm = ({ onAddExpense }) => {
 		dateError: ''
 	});
 
-  let validated = false;
-
   // validation function
   const validateForm = () => {
+    let isValid = false;
+
     const clonedErrors = {...errors};
 
     if(!expenseData.title.trim()) { // if empty
@@ -43,8 +43,11 @@ const ExpenseForm = ({ onAddExpense }) => {
     setErrors(clonedErrors); // update errors state
 
     if (!clonedErrors.titleError && !clonedErrors.amountError && !clonedErrors.dateError) {
-      validated = true;
+      isValid = true;
     }
+
+    setIsValid(isValid); // set validation status
+    return isValid;
   }
 
   // store data
@@ -60,16 +63,18 @@ const ExpenseForm = ({ onAddExpense }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		validateForm();
+		const isValid = validateForm();
 
-    if (validated) {
-      console.log(expenseData);
+    if (isValid) { // if validation is true
+      console.log(expenseData); // log data
+      onAddExpense(expenseData); // add new expense
+      setExpenseData({ // clear form after adding expense
+        title: '',
+        amount: '',
+        date: '',
+        category: '-'
+      });
     }
-
-    // add new expense
-    onAddExpense(expenseData);
-
-    // clear form after adding expense
     
 	}
 

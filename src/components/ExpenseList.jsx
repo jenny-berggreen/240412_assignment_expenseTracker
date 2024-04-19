@@ -3,12 +3,12 @@ import styles from '../styles/style.module.css'
 import listStyles from '../styles/expenseList.module.css'
 import ExpenseListItem from './ExpenseListItem';
 
-const ExpenseList = ({ expenses }) => {
+const ExpenseList = ({ expenses, isValid }) => {
   return (
 	<>
 	<div>
 		<ul className={`${listStyles.expense_list_container}`}>
-			{expenses.map((expense, index) => (
+			{isValid && expenses.map((expense, index) => (
 				<ExpenseListItem key={index} expense={expense} />
 			))}
 		</ul>

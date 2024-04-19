@@ -6,10 +6,12 @@ import ExpenseList from './components/ExpenseList.jsx'
 
 function App() {
   const [expenses, setExpenses] = useState([]);
+  const [isValid, setIsValid] = useState(false);
 
   // Function to add new expense
   const addExpense = (newExpense) => {
     setExpenses(prevExpenses => [...prevExpenses, newExpense]);
+    setIsValid(true); // set isValid to true after adding expense
   };
 
   return (
@@ -35,13 +37,13 @@ function App() {
           {/* EXPENSE FORM */}
           <div className={`${appStyles.expense_form_container} ${styles.flex} ${styles.flex_column}`}>
             <h2>Add expense</h2>
-            <ExpenseForm onAddExpense={addExpense} />
+            <ExpenseForm onAddExpense={addExpense} setIsValid={setIsValid} />
           </div>
 
           {/* DISPLAY EXPENSES */}
           <div className={`${appStyles.expense_list_container} ${styles.flex} ${styles.flex_column}`}>
             <h2>All expenses</h2>
-            <ExpenseList expenses={expenses} />
+            <ExpenseList expenses={expenses} isValid={isValid} />
           </div>
         </div>
 
