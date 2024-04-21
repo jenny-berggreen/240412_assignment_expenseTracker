@@ -15,3 +15,23 @@
 	font-family: 'Inter-Bold';
 	color: var(--color-primary);
 }
+
+@media (max-width: 768px) {
+	.total_expenses_container {
+		width: 180px;
+		height: 180px;
+	}
+}
+
+@media (max-width: 620px) {
+	.total_expenses_container {
+		width: fit-content;
+		height: fit-content;
+		border: none;
+		flex-direction: row;
+	}
+
+	.total_expenses_header {
+		margin-top: 0;
+	}
+}

@@ -38,9 +38,19 @@
 	color: rgb(146, 146, 146);
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
 	.categories_container {
 		flex-direction: row;
+	}
+}
+
+@media (max-width: 620px) {
+	.categories_container {
+		overflow-x: auto;
+	}
+
+	.category_card {
+		padding: 1.3rem 2rem;
 	}
 }
 

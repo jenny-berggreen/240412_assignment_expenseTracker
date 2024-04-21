@@ -64,6 +64,10 @@ body {
 }
 
 @media(max-width: 1024px) {
+	.gap_header {
+		height: 40px;
+	}
+
 	.main_container {
 		flex-direction: column;
 	}
@@ -74,5 +78,20 @@ body {
 
 	.form_and_list_section {
 		width: 100%;
+	}
+}
+
+@media (max-width: 620px) {
+	.form_and_list_container {
+		grid-template-columns: 1fr;
+		gap: 3rem;
+	}
+
+	.expense_list_container {
+		grid-column: 1;
+	}
+
+	.total_expenses_container {
+		justify-content: flex-start;
 	}
 }
