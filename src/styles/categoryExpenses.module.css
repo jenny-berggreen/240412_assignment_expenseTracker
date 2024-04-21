@@ -38,3 +38,9 @@
 	color: rgb(146, 146, 146);
 }
 
+@media(max-width: 1024px) {
+	.categories_container {
+		flex-direction: row;
+	}
+}
+

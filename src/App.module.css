@@ -56,3 +56,23 @@ body {
 	align-items: flex-start;
 	gap: 1rem;
 }
+
+@media(max-width: 1260px) {
+	.gap_header {
+		height: 60px;
+	}
+}
+
+@media(max-width: 1024px) {
+	.main_container {
+		flex-direction: column;
+	}
+
+	.category_container {
+		width: 100%;
+	}
+
+	.form_and_list_section {
+		width: 100%;
+	}
+}
