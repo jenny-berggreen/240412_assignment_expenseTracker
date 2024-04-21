@@ -12,19 +12,19 @@ const CategoryExpenses = ({ expenses }) => {
 	let otherTotal = 0;
 
 	for (const expense of expenses) {
-		if(expense.category === 'housing') {
+		if(expense.category === 'Housing') {
 			const amount = parseFloat(expense.amount);
 			housingTotal += amount;
-		} else if(expense.category === 'groceries') {
+		} else if(expense.category === 'Groceries') {
 			const amount = parseFloat(expense.amount);
 			groceriesTotal += amount;
-		} else if(expense.category === 'transportation') {
+		} else if(expense.category === 'Transportation') {
 			const amount = parseFloat(expense.amount);
 			transportationTotal += amount;
-		} else if(expense.category === 'clothes') {
+		} else if(expense.category === 'Clothes') {
 			const amount = parseFloat(expense.amount);
 			clothesTotal += amount;
-		} else if(expense.category === 'other') {
+		} else if(expense.category === 'Other') {
 			const amount = parseFloat(expense.amount);
 			otherTotal += amount;
 		}

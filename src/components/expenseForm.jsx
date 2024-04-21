@@ -107,11 +107,11 @@ const ExpenseForm = ({ onAddExpense, setIsValid }) => {
             <label htmlFor="category">Category</label>
 						<select name="category" className={`${formStyles.input_element}`} value={expenseData.category} onChange={handleChange}>
               <option value="">No category</option>
-              <option value="housing">Housing</option>
-              <option value="groceries">Groceries</option>
-              <option value="transportation">Transportation</option>
-              <option value="clothes">Clothes</option>
-              <option value="other">Other</option>
+              <option value="Housing">Housing</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Clothes">Clothes</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 

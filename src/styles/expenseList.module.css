@@ -9,10 +9,64 @@
 	border-bottom: solid 1px var(--color-stroke);
 }
 
+.list_item {
+	flex-basis: 20%;
+}
+
 .title_date_container {
-	gap: 2rem;
+	flex-basis: 35%;
+	justify-content: space-between;
+}
+
+.title_date_container span {
+	flex-basis: 50%;
+}
+
+.amount_container {
+	flex-basis: 10%;
+	justify-content: flex-start;
+}
+
+.button_container {
+	flex-basis: 10%;
 }
 
 .delete_button {
 	background-color: var(--color-delete);
+}
+
+/* categories */
+.housing {
+	border: solid 1px var(--color-housing);
+	background-color: #00d63d24;
+	width: 9rem;
+	padding: 0.3rem 0;
+}
+
+.groceries {
+	border: solid 1px var(--color-groceries);
+	background-color: #f946c61f;
+	width: 9rem;
+	padding: 0.3rem 0;
+}
+
+.transportation {
+	border: solid 1px var(--color-transportation);
+	background-color: #0400f919;
+	width: 9rem;
+	padding: 0.3rem 0;
+}
+
+.clothes {
+	border: solid 1px var(--color-clothes);
+	background-color: #fd87001b;
+	width: 9rem;
+	padding: 0.3rem 0;
+}
+
+.other {
+	border: solid 1px var(--color-other);
+	background-color: #00c9f614;
+	width: 9rem;
+	padding: 0.3rem 0;
 }
