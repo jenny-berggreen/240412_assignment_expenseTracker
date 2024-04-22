@@ -47,6 +47,7 @@
 @media (max-width: 620px) {
 	.categories_container {
 		overflow-x: auto;
+		justify-content: flex-start;
 	}
 
 	.category_card {
