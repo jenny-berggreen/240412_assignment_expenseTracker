@@ -9,14 +9,12 @@ import CategoryExpenses from './components/CategoryExpenses.jsx'
 
 function App() {
   const [expenses, setExpenses] = useState([]);
-  const [isValid, setIsValid] = useState(false);
 
   // retrieve expenses from local storage
   useEffect(() => {
     const storedExpenses = localStorage.getItem('expenses');
     if (storedExpenses) {
       setExpenses(JSON.parse(storedExpenses));
-      setIsValid(true); // set isValid to true if expenses exist
     }
   }, []); // run only once on component mount
 
@@ -29,7 +27,6 @@ function App() {
   // add new expense
   const addExpense = (newExpense) => {
     setExpenses(prevExpenses => [...prevExpenses, newExpense]);
-    setIsValid(true); // set isValid to true after adding expense
   };
 
   // delete expense
@@ -64,7 +61,7 @@ function App() {
             {/* EXPENSE FORM */}
             <div className={`${appStyles.expense_form_container} ${styles.flex} ${styles.flex_column}`}>
               <h2 className={`${fontStyles.l}`}>Add expense</h2>
-              <ExpenseForm onAddExpense={addExpense} setIsValid={setIsValid} />
+              <ExpenseForm onAddExpense={addExpense} />
             </div>
 
             {/* DISPLAY EXPENSES */}

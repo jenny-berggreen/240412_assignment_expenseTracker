@@ -3,7 +3,7 @@ import styles from '../styles/style.module.css'
 import formStyles from '../styles/expenseForm.module.css'
 import fontStyles from '../styles/fontSizes.module.css'
 
-const ExpenseForm = ({ onAddExpense, setIsValid }) => {
+const ExpenseForm = ({ onAddExpense }) => {
   // expense data object
 	const [expenseData, setExpenseData] = useState({
 		title: '',
@@ -20,9 +20,11 @@ const ExpenseForm = ({ onAddExpense, setIsValid }) => {
 		dateError: ''
 	});
 
+  const [isValid, setIsValid] = useState(false);
+
   // validation function
   const validateForm = () => {
-    let isValid = false;
+    let formIsValid = false;
 
     const clonedErrors = {...errors};
 
@@ -45,11 +47,11 @@ const ExpenseForm = ({ onAddExpense, setIsValid }) => {
     setErrors(clonedErrors); // update errors state
 
     if (!clonedErrors.titleError && !clonedErrors.amountError && !clonedErrors.dateError) {
-      isValid = true;
+      formIsValid = true;
     }
 
-    setIsValid(isValid); // set validation status
-    return isValid;
+    setIsValid(formIsValid);
+    return formIsValid;
   }
 
   // store data
@@ -65,14 +67,12 @@ const ExpenseForm = ({ onAddExpense, setIsValid }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-    const newExpenseData = {
-      ...expenseData,
-      id: Date.now() // generate a new unique ID for the expense
-    };
-
-		const isValid = validateForm();
-
-    if (isValid) { // if validation is true
+    if (validateForm()) { // if the form is valid
+      const newExpenseData = {
+        ...expenseData,
+        id: Date.now() // generate a new unique ID for the expense
+      };
+      
       console.log(newExpenseData); // log data
       onAddExpense(newExpenseData); // add new expense
       setExpenseData({ // clear form after adding expense
