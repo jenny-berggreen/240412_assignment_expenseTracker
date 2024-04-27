@@ -50,4 +50,8 @@
 	transform: scale(0.97);
 }
 
+.error_text {
+	color: var(--color-delete);
+}
+
 
