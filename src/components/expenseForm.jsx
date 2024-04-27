@@ -9,7 +9,8 @@ const ExpenseForm = ({ onAddExpense, setIsValid }) => {
 		title: '',
 		amount: '',
 		date: '',
-		category: '-'
+		category: '-',
+    id: Date.now()
 	});
 
   // errors object
@@ -64,16 +65,22 @@ const ExpenseForm = ({ onAddExpense, setIsValid }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
+    const newExpenseData = {
+      ...expenseData,
+      id: Date.now() // generate a new unique ID for the expense
+    };
+
 		const isValid = validateForm();
 
     if (isValid) { // if validation is true
-      console.log(expenseData); // log data
-      onAddExpense(expenseData); // add new expense
+      console.log(newExpenseData); // log data
+      onAddExpense(newExpenseData); // add new expense
       setExpenseData({ // clear form after adding expense
         title: '',
         amount: '',
         date: '',
-        category: '-'
+        category: '-',
+        id: Date.now() // reset ID for the next expense
       });
     }
     

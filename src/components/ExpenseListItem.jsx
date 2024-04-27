@@ -4,7 +4,7 @@ import listStyles from '../styles/expenseList.module.css'
 
 const ExpenseListItem = ({ expense, onDeleteExpense }) => {
 
-	const { title, amount, date, category } = expense;
+	const { title, amount, date, category, id } = expense;
 
 	// define class based on expense category
     let categoryClass;
@@ -42,8 +42,8 @@ const ExpenseListItem = ({ expense, onDeleteExpense }) => {
 	  };
 
 	const handleDelete = () => {
-		// call onDelete function with the expense to be deleted
-		onDeleteExpense(expense);
+		// call onDelete function with the expense id to be deleted
+		onDeleteExpense(id);
 	  };
 
   return (

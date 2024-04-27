@@ -12,8 +12,8 @@ const ExpenseList = ({ expenses, onDeleteExpense }) => {
 	<>
 	
 	<ul className={`${listStyles.expense_list_container}`}>
-		{sortedExpenses.length > 0 && sortedExpenses.map((expense, index) => (
-          <ExpenseListItem key={index} expense={expense} onDeleteExpense={onDeleteExpense} />
+		{sortedExpenses.length > 0 && sortedExpenses.map((expense) => (
+          <ExpenseListItem key={expense.id} expense={expense} onDeleteExpense={onDeleteExpense} />
         ))}
 
 		{sortedExpenses.length === 0 && <p>No expenses to display.</p>}

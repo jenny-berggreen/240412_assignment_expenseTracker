@@ -20,6 +20,7 @@ function App() {
     }
   }, []); // run only once on component mount
 
+
   // store expenses in local storage
   useEffect(() => {
     localStorage.setItem('expenses', JSON.stringify(expenses));
@@ -32,8 +33,8 @@ function App() {
   };
 
   // delete expense
-  const deleteExpense = (expenseToDelete) => {
-    const updatedExpenses = expenses.filter(expense => expense !== expenseToDelete);
+  const deleteExpense = (expenseIdToDelete) => {
+    const updatedExpenses = expenses.filter(expense => expense.id !== expenseIdToDelete);
     setExpenses(updatedExpenses);
   };
 
