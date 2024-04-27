@@ -18,7 +18,7 @@ const TotalExpenses = ({ expenses }) => {
 
   return (
 	<div className={`${totalExpensesStyles.total_expenses_container} ${styles.flex} ${styles.flex_column}`}>
-		<span className={`${totalExpensesStyles.total_expenses_header} ${fontStyles.m}`}>Total Expenses</span>
+		<span className={`${totalExpensesStyles.total_expenses_header} ${fontStyles.l}`}>Total Expenses</span>
 		<span className={`${totalExpensesStyles.total_expenses_amount} ${fontStyles.xxl}`}>${totalAmount}</span>
 	</div>
   )

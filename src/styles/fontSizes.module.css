@@ -43,11 +43,37 @@
 
 @media (max-width: 620px) {
 	.xxl {
-		font-size: 25px;
+		font-size: 22px;
 	}
 
 	.xl {
+		font-size: 18px;
+	}
+
+	.l {
+		font-size: 15px;
+	}
+
+	.m {
+		font-size: 12px;
+	}
+
+	.s, * {
+		font-size: 10px;
+	}
+
+}
+
+@media (max-width: 425px) {
+	.xxl {
 		font-size: 20px;
 	}
 
+	.xl {
+		font-size: 15px;
+	}
+
+	.m {
+		font-size: 10px;
+	}
 }

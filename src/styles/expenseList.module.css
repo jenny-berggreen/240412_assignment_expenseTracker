@@ -70,3 +70,24 @@
 	width: 9rem;
 	padding: 0.3rem 0;
 }
+
+@media (max-width: 620px) {
+	.expense_list_row {
+		padding: 0.8rem 1rem;
+	}
+	.title_date_container {
+		flex-direction: column;
+		align-items: flex-start;
+		flex-basis: 28%;
+	}
+}
+
+@media (max-width: 425px) {
+	.housing,
+	.transportation,
+	.groceries,
+	.clothes,
+	.other {
+		width: 8rem;
+	}
+}

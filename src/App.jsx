@@ -40,7 +40,7 @@ function App() {
     <div className={`${appStyles.app_container} ${styles.flex} ${styles.flex_column}`}>
       {/* NAVBAR */}
       <nav className={`${appStyles.navbar} ${styles.flex}`}>
-        <span className={`${appStyles.nav_header} ${fontStyles.m}`}>Expense Tracker</span>
+        <span className={`${appStyles.nav_header} ${fontStyles.l}`}>Expense Tracker</span>
       </nav>
 
       <div className={`${appStyles.main_container} ${styles.flex} ${styles.flex_row}`}>
