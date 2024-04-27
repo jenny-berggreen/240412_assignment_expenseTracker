@@ -33,6 +33,12 @@
 
 .delete_button {
 	background-color: var(--color-delete);
+	transition: transform 0.2s ease;
+}
+
+.delete_button:hover {
+	background-color: #e40000;
+	transform: scale(0.97);
 }
 
 /* categories */
