@@ -98,7 +98,7 @@ const ExpenseForm = ({ onAddExpense }) => {
 						<p className={`${formStyles.error_text}`}>{errors.titleError}</p>
           </div>
           <div className={`${formStyles.input_group} ${formStyles.input_group__amount} ${styles.flex} ${styles.flex_column}`}>
-            <label htmlFor="amount">Amount<sup>*</sup></label>
+            <label htmlFor="amount">Amount($)<sup>*</sup></label>
 						<input type="number" name='amount' placeholder='Ex. 3.50' className={`${formStyles.input_element}`} value={expenseData.amount} onChange={handleChange} />
 						<p className={`${formStyles.error_text}`}>{errors.amountError}</p>
           </div>
