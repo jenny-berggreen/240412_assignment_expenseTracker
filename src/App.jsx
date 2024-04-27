@@ -10,6 +10,7 @@ import Toast from './components/Toast.jsx'
 
 function App() {
   const [expenses, setExpenses] = useState([]);
+  const [toast, setToast] = useState(null);
 
   // retrieve expenses from local storage
   useEffect(() => {
@@ -19,26 +20,35 @@ function App() {
     }
   }, []); // run only once on component mount
 
-
   // store expenses in local storage
   useEffect(() => {
     localStorage.setItem('expenses', JSON.stringify(expenses));
   }, [expenses]); // run whenever expenses state changes
 
+  // function to show toast message
+  const showToast = (type, message) => {
+    setToast({ type, message });
+    setTimeout(() => setToast(null), 3000); // hide toast after 3 seconds
+  };
+
   // add new expense
   const addExpense = (newExpense) => {
     setExpenses(prevExpenses => [...prevExpenses, newExpense]);
+    showToast('added', 'New expense added');
   };
 
   // delete expense
   const deleteExpense = (expenseIdToDelete) => {
     const updatedExpenses = expenses.filter(expense => expense.id !== expenseIdToDelete);
     setExpenses(updatedExpenses);
+    showToast('deleted', 'Expense deleted');
   };
 
   return (
     <>
-    <Toast />
+      {toast && (
+        <Toast type={toast.type} message={toast.message} />
+      )}
 
     <div className={`${appStyles.app_container} ${styles.flex} ${styles.flex_column}`}>
       {/* NAVBAR */}

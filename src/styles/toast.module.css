@@ -5,8 +5,15 @@
 }
 
 .toast {
-	display: none;
+	display: block;
 	padding: 0.5rem 2rem;
 	border-radius: 10px;
+}
+
+.toast__added {
 	background-color: rgb(146, 255, 131);
+}
+
+.toast__deleted {
+	background-color: rgb(157, 206, 255);
 }
