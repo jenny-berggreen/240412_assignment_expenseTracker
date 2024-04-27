@@ -1,0 +1,12 @@
+.toast_container {
+	position: fixed;
+	bottom: 20px;
+	width: 100%;
+}
+
+.toast {
+	display: none;
+	padding: 0.5rem 2rem;
+	border-radius: 10px;
+	background-color: rgb(146, 255, 131);
+}

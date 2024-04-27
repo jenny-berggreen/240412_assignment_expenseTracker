@@ -6,6 +6,7 @@ import ExpenseForm from './components/ExpenseForm.jsx'
 import ExpenseList from './components/ExpenseList.jsx'
 import TotalExpenses from './components/TotalExpenses.jsx'
 import CategoryExpenses from './components/CategoryExpenses.jsx'
+import Toast from './components/Toast.jsx'
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -37,6 +38,8 @@ function App() {
 
   return (
     <>
+    <Toast />
+
     <div className={`${appStyles.app_container} ${styles.flex} ${styles.flex_column}`}>
       {/* NAVBAR */}
       <nav className={`${appStyles.navbar} ${styles.flex}`}>
