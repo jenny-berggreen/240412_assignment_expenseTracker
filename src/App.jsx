@@ -18,7 +18,7 @@ function App() {
     if (storedExpenses) {
       setExpenses(JSON.parse(storedExpenses));
     }
-  }, []); // run only once on component mount
+  }, []); // run only once when component mounts
 
   // store expenses in local storage
   useEffect(() => {
