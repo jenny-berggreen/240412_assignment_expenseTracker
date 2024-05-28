@@ -1,8 +1,9 @@
-# React + Vite
+## React Expense Tracker - Assignment 3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Expense Tracker application built with React that helps users manage their expenses. The application allows users to add, view, and delete expenses, as well as view total expenses and expenses categorized by type. All expenses are stored locally in the browser's local storage. The application has a component based architecture which helps in breaking down the application into smaller, manageable, and reusable parts. 
 
-Currently, two official plugins are available:
+The UseState hook is used in App.jsx to manage the 'expenses' array and 'toast' state variables. In ExpenseForm.jsx it is used to manage the form data and validation errors. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Also in App.jsx, the useEffect hook is used to retrieve expenses from local storage when the component mounts and store expenses in local storage whenever the expenses state changes.
+
+
